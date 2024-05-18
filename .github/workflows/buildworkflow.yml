@@ -44,10 +44,8 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
-        generate_release_notes: true
         draft: false
         prerelease: false
-        make_latest: true
 
   dependency-submission:
 
