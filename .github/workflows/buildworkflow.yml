@@ -32,7 +32,7 @@ jobs:
 
     
     - name: Build with Gradle Wrapper
-      run: ./gradlew -Preckon.stage=final reckonTagCreaete reckonTagbuild
+      run: ./gradlew -Preckon.stage=final reckonTagCreate reckonTagBuild
 
   dependency-submission:
 
