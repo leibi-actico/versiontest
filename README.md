@@ -12,5 +12,7 @@ Executing 'reckonTagCreate -Preckon.stage=final'...
 Reckoned version: 0.0.1
 ```
 
+Easy cases: one version jump by the commit
+
 
 
