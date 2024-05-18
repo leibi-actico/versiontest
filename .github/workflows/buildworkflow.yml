@@ -44,7 +44,7 @@ jobs:
           echo "$RELEASE_VERSION"
           gh release create "$RELEASE_VERSION" \
               --repo="$GITHUB_REPOSITORY" \
-              --title="Release ${$RELEASE_VERSION}" \
+              --title="Release $RELEASE_VERSION" \
               --generate-notes
 
   dependency-submission:
