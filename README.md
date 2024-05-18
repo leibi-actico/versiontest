@@ -1,4 +1,6 @@
-.h1 initial setup. 
+# Initial setup. 
+
+Projects whch works with reckon and semantic versioning to determine a good way to incorporate this with head first development 
 
 create initial version : 
 ```shell
@@ -12,7 +14,35 @@ Executing 'reckonTagCreate -Preckon.stage=final'...
 Reckoned version: 0.0.1
 ```
 
-Easy cases: one version jump by the commit
+## Easy cases: one version jump by the commit
 
+This means its clear from that one (merge) commit which version jump we want to make. 
+This can be inferred by the jump indicated in the commit version. 
+
+The general form is:
+
+```
+<scope>(optional area of codebase): rest of message
+
+body is not used
+```
+
+Where `<scope>` is `major`, `minor`, or `patch` (must be lowercase).
+patch is used as the default and can be omitted.
+
+If a merge contains more that one commit the one with the highest severity "wins" to get to the new version 
+major > minor > patch
+
+So this approach is fine for Bugfixes, Vulnerability fixes and small features/tasks.
+
+## Hard case: We develop a slightly larger feature 
+So we have multiple commits contributing to this feature but the feature is not yet ready. 
+
+We can not simply put it in a patch release as we do not want the consumer of the code to use parts of this feature already. 
+However, we also can not put it in a minor release as it is not ready to use yet and prune to change. 
+
+We also want to create a release with every green main build for continuous deployment.
+
+The logical consequence is that we need to slice our feature stories very carefully. 
 
 

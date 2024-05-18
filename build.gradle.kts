@@ -4,9 +4,6 @@ plugins {
     id("io.spring.dependency-management") version "1.1.5"
 }
 
-group = "net.leibi"
-version = "0.0.1-SNAPSHOT"
-
 java {
     sourceCompatibility = JavaVersion.VERSION_21
 }
@@ -17,6 +14,8 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -24,3 +23,5 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+//reckonTagCreate.dependsOn check
