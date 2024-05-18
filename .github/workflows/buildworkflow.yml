@@ -32,7 +32,20 @@ jobs:
 
     
     - name: Build with Gradle Wrapper
-      run: ./gradlew -Preckon.stage=final reckonTagCreate reckonTagBuild
+      run: ./gradlew -Preckon.stage=final reckonTagCreate reckonTagPush
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        generate_release_notes: true
+        draft: false
+        prerelease: false
+        make_latest: true
 
   dependency-submission:
 
