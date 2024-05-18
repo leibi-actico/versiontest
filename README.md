@@ -1,4 +1,16 @@
 .h1 initial setup. 
 
 create initial version : 
-'./gradlew -Preckon.stage=final reckonTagCreate build'
+```shell
+./gradlew -Preckon.stage=final reckonTagCreate
+```
+
+```shell
+Executing 'reckonTagCreate -Preckon.stage=final'...
+
+> Configure project :
+Reckoned version: 0.0.1
+```
+
+
+
