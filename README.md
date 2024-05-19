@@ -45,4 +45,23 @@ We also want to create a release with every green main build for continuous depl
 
 The logical consequence is that we need to slice our feature stories very carefully. 
 
+The thing is we can not reliably make one commit per feature to main as the feature might still be too big. 
+To solve this lets have a thought about a similar scenario (avoiding to use unwanted code): deprecation.
+
+A dependency might have a deprecated functionality which we can technially use but are encouraged not to use. 
+To indicate this the class or method is annotated with the @Deprecated annotation. 
+
+So what if we do the same? 
+We create an annotation which indicates that this functionality is in the context of an unfinished feature and that it must not be used outside of it. 
+
+i.e. 
+```java 
+@Beta(forFeature = "New cool feature")
+```
+
+With either a custom annotation processor or the use of Archunit tests we can check for the usage of such a functionality (outside a place with is annotated for the same features ideally.)
+This way we can avoid the unintended usage of this functionality. 
+
+
+
 
