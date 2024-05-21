@@ -1,4 +1,4 @@
-package net.leibi.versiontest.annotation;
+package net.leibi.versiontest.betaprocessor;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

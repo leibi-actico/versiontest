@@ -1,4 +1,4 @@
-package net.leibi.versiontest.annotation;
+package net.leibi.versiontest.betaprocessor;
 
 import java.util.Set;
 
@@ -19,6 +19,7 @@ import javax.tools.Diagnostic;
 import com.google.auto.service.AutoService;
 
 import lombok.extern.log4j.Log4j2;
+
 
 @Log4j2
 @SupportedAnnotationTypes({ "net.leibi.versiontest.annotation.Beta" })
