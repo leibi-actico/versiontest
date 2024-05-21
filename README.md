@@ -30,7 +30,7 @@ body is not used
 Where `<scope>` is `major`, `minor`, or `patch` (must be lowercase).
 patch is used as the default and can be omitted.
 
-If a merge contains more that one commit the one with the highest severity "wins" to get to the new version 
+If a merge contains more than one commit the one with the highest severity "wins" to get to the new version 
 major > minor > patch
 
 So this approach is fine for Bugfixes, Vulnerability fixes and small features/tasks.
@@ -46,9 +46,9 @@ We also want to create a release with every green main build for continuous depl
 The logical consequence is that we need to slice our feature stories very carefully. 
 
 The thing is we can not reliably make one commit per feature to main as the feature might still be too big. 
-To solve this lets have a thought about a similar scenario (avoiding to use unwanted code): deprecation.
+To solve this lets have a thought about a similar scenario (avoiding using unwanted code): deprecation.
 
-A dependency might have a deprecated functionality which we can technially use but are encouraged not to use. 
+A dependency might have a deprecated functionality which we can technically use but are encouraged not to use. 
 To indicate this the class or method is annotated with the @Deprecated annotation. 
 
 So what if we do the same? 
@@ -59,7 +59,7 @@ i.e.
 @Beta(forFeature = "New cool feature")
 ```
 
-With either a custom annotation processor or the use of Archunit tests we can check for the usage of such a functionality (outside a place with is annotated for the same features ideally.)
+With either a custom annotation processor or the use of ArchUnit tests we can check for the usage of such a functionality (outside a place with is annotated for the same features ideally.)
 This way we can avoid the unintended usage of this functionality. 
 
 
