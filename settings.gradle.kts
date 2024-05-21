@@ -12,6 +12,7 @@ extensions.configure<org.ajoberstar.reckon.gradle.ReckonExtension> {
 
 rootProject.name = "versiontest"
 
+include("BetaAnnotation")
 include("BetaProcessor")
 include("testservice")
 

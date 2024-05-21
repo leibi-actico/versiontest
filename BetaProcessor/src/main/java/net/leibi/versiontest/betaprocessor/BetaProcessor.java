@@ -8,7 +8,6 @@ import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.AnnotationMirror;
 import javax.lang.model.element.Element;
@@ -18,13 +17,14 @@ import javax.tools.Diagnostic;
 
 import com.google.auto.service.AutoService;
 
+
 import lombok.extern.log4j.Log4j2;
+import net.leibi.versiontest.betaannotation.LeibiBeta;
 
 
 @Log4j2
-@SupportedAnnotationTypes({ "net.leibi.versiontest.annotation.Beta" })
+@SupportedAnnotationTypes({ "net.leibi.versiontest.annotation.LeibiBeta" })
 @AutoService(Processor.class)
-@SupportedSourceVersion(SourceVersion.RELEASE_21)
 public class BetaProcessor extends AbstractProcessor
 {
    @Override
@@ -54,12 +54,12 @@ public class BetaProcessor extends AbstractProcessor
    @Override
    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv)
    {
-      log.info("Beta process");
+      processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "Beta process ");
       processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, "processing Beta ");
-      Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(Beta.class);
+      Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(LeibiBeta.class);
       for (Element e : elements)
       {
-         log.info(e);
+         processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, e.toString());
       }
       return true;
    }

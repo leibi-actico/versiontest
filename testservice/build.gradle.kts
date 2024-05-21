@@ -10,10 +10,21 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    compileOnly {
+        extendsFrom(configurations.annotationProcessor.get())
+    }
+}
+
+tasks.withType<JavaCompile> {
+//    options.compilerArgs.add("--enable-preview")
+    options.compilerArgs.add("-XprintProcessorInfo")
+    options.compilerArgs.add("-XprintRounds")
+}
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
-
-    compileOnly(project(":BetaProcessor"))
+    implementation(project(":BetaAnnotation"))
     annotationProcessor(project(":BetaProcessor"))
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")

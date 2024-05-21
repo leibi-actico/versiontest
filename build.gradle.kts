@@ -7,12 +7,6 @@ java {
     sourceCompatibility = JavaVersion.VERSION_21
 }
 
-configurations {
-    compileOnly {
-        extendsFrom(configurations.annotationProcessor.get())
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -20,6 +14,11 @@ repositories {
 dependencies {
 }
 
+tasks.withType<JavaCompile> {
+//    options.compilerArgs.add("--enable-preview")
+    options.compilerArgs.add("-XprintProcessorInfo")
+    options.compilerArgs.add("-XprintRounds")
+}
 
 tasks.withType<Test> {
     useJUnitPlatform()

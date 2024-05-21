@@ -1,4 +1,4 @@
-package net.leibi.versiontest.betaprocessor;
+package net.leibi.versiontest.betaannotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -11,9 +11,10 @@ import java.lang.annotation.Target;
  * Moreover, classes, constructors, and methods annotated as beta are not considered at production
  * quality, and should not be used outside the intended feature
  */
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.CLASS)
 @Target({ElementType.TYPE, ElementType.METHOD})
-public @interface Beta {
+public @interface LeibiBeta
+{
 
     /**
      * Indicated for which feature this is introduced
