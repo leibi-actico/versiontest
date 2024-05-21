@@ -6,6 +6,9 @@ import net.leibi.versiontest.service.AOldService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.annotation.processing.Processor;
+import java.util.ServiceLoader;
+
 @SpringBootApplication
 @Log4j2
 public class VersiontestApplication {
@@ -18,6 +21,8 @@ public class VersiontestApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(VersiontestApplication.class, args);
+        ServiceLoader<Processor> loader = ServiceLoader.load(Processor.class);
+        loader.forEach(x -> log.info(x.getClass().getSimpleName()));
     }
 
     @PostConstruct

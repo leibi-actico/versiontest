@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
  * quality, and should not be used outside the intended feature
  */
 @Retention(RetentionPolicy.SOURCE)
-@Target({ElementType.TYPE, ElementType.CONSTRUCTOR, ElementType.METHOD})
+@Target({ElementType.TYPE, ElementType.METHOD})
 public @interface Beta {
 
     /**
