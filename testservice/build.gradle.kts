@@ -10,16 +10,19 @@ repositories {
     mavenCentral()
 }
 
+/*
 configurations {
     compileOnly {
         extendsFrom(configurations.annotationProcessor.get())
     }
 }
 
+ */
+
 tasks.withType<JavaCompile> {
 //    options.compilerArgs.add("--enable-preview")
     options.compilerArgs.add("-XprintProcessorInfo")
-    options.compilerArgs.add("-XprintRounds")
+    //options.compilerArgs.add("-XprintRounds")
 }
 
 dependencies {

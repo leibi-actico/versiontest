@@ -23,8 +23,8 @@ import net.leibi.versiontest.betaannotation.LeibiBeta;
 
 
 @Log4j2
-@SupportedAnnotationTypes({ "net.leibi.versiontest.annotation.LeibiBeta" })
 @AutoService(Processor.class)
+@SupportedAnnotationTypes({ "net.leibi.versiontest.betaannotation.LeibiBeta" })
 public class BetaProcessor extends AbstractProcessor
 {
    @Override
