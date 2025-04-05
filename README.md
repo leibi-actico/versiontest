@@ -63,5 +63,11 @@ With either a custom annotation processor or the use of Archunit tests we can ch
 This way we can avoid the unintended usage of this functionality. 
 
 
+## We want to adhere to the conventional commits as well 
+
+example:
+```
+git commit -m "fix(Readme): add some text"
+````
 
 
